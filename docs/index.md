@@ -5,10 +5,6 @@ A very simple tabular data formatter for console application.
 ## Installation
 
 ```shell
-poetry add ...
-
-# or
-
 pip install ...
 ```
 
@@ -16,7 +12,6 @@ pip install ...
 
 ```python
 from tabler import Tabler
-
 
 table = Tabler(
     data=[
