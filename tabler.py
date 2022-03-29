@@ -1,4 +1,6 @@
-__version__ = "0.1.0"
+from __future__ import print_function
+
+__version__ = "0.1.1"
 
 
 class Tabler(list):
@@ -24,14 +26,13 @@ class Tabler(list):
 
         :param data: a list of list data
         :param columns: a list of columns data
-        :param padding: inner space when printing table, default: 2
+        :param padding: inner space when printing table, default: 1
         :param alignment: text alignment, options: ALIGN_RIGHT, ALIGN_LEFT, ALIGN_CENTER
         :param columns_width: column width for specific columns: [(index, width)] ex: [(1, 10)]
         :param column_divider: column divider, default: |
         :param row_divider: row divider, default: -
         :param break_divider: break divider, default: +
 
-        >>> import sys
         >>> tabler = Tabler(data=[[1, "A test"]], columns=["No", "Name"])
         >>> tabler.append([2, "Another test"])
         >>> tabler.insert(0, [0, "First test"])
@@ -53,10 +54,6 @@ class Tabler(list):
         self._row_divider = row_divider
         self._break_divider = break_divider
         self._maxes = None
-
-    @staticmethod
-    def _length(item):
-        return len(str(item))
 
     def _set_maxes(self):
         maxes = {}
@@ -88,15 +85,14 @@ class Tabler(list):
 
     @property
     def divider(self):
-        divs = []
+        text = []
         for v in self._maxes.values():
             t = self._row_divider * (v + self._padding * 2)
+            text.append(t)
 
-            divs.append(t)
-
-        divs.insert(0, "")
-        divs.append("")
-        return self._break_divider.join(divs)
+        text.insert(0, "")
+        text.append("")
+        return self._break_divider.join(text)
 
     @property
     def headers(self):
@@ -124,7 +120,6 @@ class Tabler(list):
 
     def format(self):
         self._maxes = self._set_maxes()
-
         return "\n".join(
             [
                 self.divider,
