@@ -24,7 +24,7 @@ package:
 	@python setup.py sdist
 	@twine upload dist/*
 	@rm -rf dist
-	@rm -rf *.egg_info
+	@rm -rf *.egg-info
 
 test:
 	@python test.py
