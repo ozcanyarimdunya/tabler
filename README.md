@@ -5,7 +5,7 @@ A very simple tabular data formatter for console application.
 ## Installation
 
 ```shell
-pip install ...
+pip install py-tabler
 ```
 
 ## Example

@@ -1,3 +1,6 @@
+__version__ = "0.1.0"
+
+
 class Tabler(list):
     ALIGN_RIGHT = 0
     ALIGN_LEFT = 1
