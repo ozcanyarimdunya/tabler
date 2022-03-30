@@ -2,6 +2,11 @@
 
 A very simple tabular data formatter for console application.
 
+| Documentation   | https://ozcanyarimdunya.github.io/tabler/     |
+|-----------------|-----------------------------------------------|
+| **Source code** | **https://github.com/ozcanyarimdunya/tabler** |
+
+
 ## Installation
 
 ```shell
